@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Language to Sign</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      margin: 0;
+      background: url('https://lh3.googleusercontent.com/p/AF1QipOxmGfx13eqsakMxaz2rU36J6_OuI3AMbyHNfe9=s680-w680-h510-rw') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px 100px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 40px 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #1a1a1a;
+    }
+
+    .button {
+      width: 100%;
+      min-height: 60px;
+      margin: 10px 0;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      background-color: #27456c;
+      color: white;
+      transition: background 0.3s ease, transform 0.1s ease;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-family: "Times New Roman", serif;
+    }
+
+    .button:hover {
+      background-color: #1e3555;
+      transform: translateY(-1px);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .logo-container {
+      margin-top: 40px;
+      opacity: 0.85;
+    }
+
+    .logo-container img {
+      width: 40px;
+      height: auto;
+    }
+
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #888;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      opacity: 0.9;
+      z-index: 1000;
+      transition: background 0.3s ease;
+      font-family: "Times New Roman", serif;
+    }
+
+    .back-button:hover {
+      background-color: #555;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Language Selection -->
+  <div class="card" id="language-selection">
+    <h1>Select Your Language</h1>
+    <button class="button" onclick="showDocuments('en')">English</button>
+    <button class="button" onclick="showDocuments('zh')">中文</button>
+  </div>
+
+  <!-- English Documents -->
+  <div class="card hidden" id="english-docs">
+    <h1>Select a Document</h1>
+    <a href="https://www.jotform.com/sign/252883841661061/invite/01k7pm9wpfc1a9642c05ed25cb" target="_blank" rel="noopener noreferrer">
+      <button class="button">Client Risk Acknowledgment</button>
+    </a>
+    <a href="https://www.jotform.com/sign/252883671589071/invite/01k7pmfdmb240c184686cd21d1" target="_blank" rel="noopener noreferrer">
+      <button class="button">Disclaimer Regarding USCIS Interview Attendance</button>
+    </a>
+    <a href="https://www.jotform.com/sign/252884430659063/invite/01k7pmm0d912709c3546aa923f" target="_blank" rel="noopener noreferrer">
+      <button class="button">Statements Regarding Bond</button>
+    </a>
+    <a href="https://www.jotform.com/sign/252884042998068/invite/01k7pn2p8ja383b69b43407621" target="_blank" rel="noopener noreferrer">
+      <button class="button">Statements Regarding Interview</button>
+    </a>
+    <a href="https://www.jotform.com/sign/252884088657070/invite/01k7pna0tv6968992d12efbb04" target="_blank" rel="noopener noreferrer">
+      <button class="button">Statements Regarding Court Appearance</button>
+    </a>
+  </div>
+
+  <!-- Chinese Documents -->
+  <div class="card hidden" id="chinese-docs">
+    <h1>请选择文件</h1>
+    <a href="https://www.jotform.com/sign/252883571678069/invite/01k7pkrq7r1ca738db27e0a2fe" target="_blank" rel="noopener noreferrer">
+      <button class="button">客户风险确认书</button>
+    </a>
+    <a href="https://www.jotform.com/sign/252883753577069/invite/01k7pm54eg45eb124ebc67d268" target="_blank" rel="noopener noreferrer">
+      <button class="button">USCIS 面谈的免责声明</button>
+    </a>
+    <a href="https://www.jotform.com/sign/252884374551061/invite/01k7pmsza7165bfacb60869e4c" target="_blank" rel="noopener noreferrer">
+      <button class="button">关于保释的声明书</button>
+    </a>
+    <a href="https://www.jotform.com/sign/252883754303057/invite/01k7pn5mqr702681a94cf90e75" target="_blank" rel="noopener noreferrer">
+      <button class="button">关于问话的声明书</button>
+    </a>
+    <a href="https://www.jotform.com/sign/252884252008053/invite/01k7pncty0db3f666ad1a26c72" target="_blank" rel="noopener noreferrer">
+      <button class="button">关于上庭的声明书</button>
+    </a>
+  </div>
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQHAjQqaFoyQCw/company-logo_200_200/company-logo_200_200/0/1719849657405/jia_law_group_logo?e=2147483647&v=beta&t=A1OrsB7lnDXOLGMGonK0ekG-lVQ1nr" alt="Logo" />
+  </div>
+
+  <!-- Back Buttons -->
+  <button id="back-from-english" class="back-button hidden" onclick="goBack()">Back</button>
+  <button id="back-from-chinese" class="back-button hidden" onclick="goBack()">Back</button>
+
+  <script>
+    function showDocuments(language) {
+      document.getElementById("language-selection").classList.add("hidden");
+
+      if (language === "en") {
+        document.getElementById("english-docs").classList.remove("hidden");
+        document.getElementById("back-from-english").classList.remove("hidden");
+      } else if (language === "zh") {
+        document.getElementById("chinese-docs").classList.remove("hidden");
+        document.getElementById("back-from-chinese").classList.remove("hidden");
+      }
+    }
+
+    function goBack() {
+      document.getElementById("english-docs").classList.add("hidden");
+      document.getElementById("chinese-docs").classList.add("hidden");
+      document.getElementById("back-from-english").classList.add("hidden");
+      document.getElementById("back-from-chinese").classList.add("hidden");
+      document.getElementById("language-selection").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
